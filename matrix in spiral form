@@ -1,0 +1,42 @@
+import java.util.*;
+
+class Solution {
+    public List<Integer> spiralOrder(int[][] arr) {
+        int m = arr.length, n = arr[0].length;
+        List<Integer> ans = new ArrayList<>();
+        int minr = 0, maxr = m - 1;
+        int minc = 0, maxc = n - 1;
+        
+        while (minr <= maxr && minc <= maxc) {
+            // Traverse the top row
+            for (int j = minc; j <= maxc; j++) {
+                ans.add(arr[minr][j]);
+            }
+            minr++;
+            
+            // Traverse the right column
+            for (int i = minr; i <= maxr; i++) {
+                ans.add(arr[i][maxc]);
+            }
+            maxc--;
+            
+            // Traverse the bottom row
+            if (minr <= maxr) {
+                for (int j = maxc; j >= minc; j--) {
+                    ans.add(arr[maxr][j]);
+                }
+                maxr--;
+            }
+            
+            // Traverse the left column
+            if (minc <= maxc) {
+                for (int i = maxr; i >= minr; i--) {
+                    ans.add(arr[i][minc]);
+                }
+                minc++;
+            }
+        }
+        
+        return ans;
+    }
+}
