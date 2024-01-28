@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class string {
+
+        public static void main(String[] args) {
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Enter the String: ");
+                String b = sc.nextLine();
+                int n = b.length();
+                int count =0;
+                for(int i = 0 ; i < n ; i++){
+                        char ch = b.charAt(i);
+                        if(isConstant(ch)) count++;
+                        
+
+                }
+                System.out.println(count);
+                
+                // System.out.println(n);
+        }
+        public static boolean isConstant(char ch){
+                 if(!isVowel(ch)) return true;
+                return false;
+        }
+        public static boolean isVowel(char ch){
+                if(ch=='a' || ch=='A') return true;
+                if(ch=='e' || ch=='E') return true;
+                if(ch=='i' || ch=='I') return true;
+                if(ch=='o' || ch=='O') return true;
+                if(ch=='u' || ch=='U') return true;
+                return false;
+                
+        }
+}
