@@ -1,0 +1,15 @@
+class Solution {
+    public int search(int[] arr, int target) {
+        int n = arr.length;
+        int l = 0 , hi = n-1;
+        while(l<=hi){
+            int mid = (l+hi)/2;
+            if(arr[mid]== target) return mid;
+            else if(arr[mid]> target) hi = mid-1;
+            else l = mid+1;
+        }
+        return -1;
+
+        
+    }
+}
