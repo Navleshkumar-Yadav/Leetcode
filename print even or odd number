@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Simple {
+
+        public static void main(String[] args) {
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Enter the size of element: ");
+                int n = sc.nextInt();
+                int arr[] = new int[n];
+                int sumEven =0;
+                int sumOdd =0;
+                System.out.println("Enter the array elemnt: ");
+
+                for(int i=0 ; i<n ; i++){
+                        arr[i] = sc.nextInt();
+
+                }
+                for(int i =0 ; i<n ; i++){
+                        if(arr[i]%2==0){
+                                sumEven = sumEven+arr[i];
+
+                        }
+                        else{
+                                sumOdd = sumOdd+arr[i];
+                        }
+                }
+                System.out.println("Sum of even number: "+ sumEven);
+                System.out.println("sum of odd number: "+ sumOdd);
+        }
+}
